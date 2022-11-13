@@ -10,8 +10,6 @@
   background-color: black;
   color: white;
   padding-top: 1%;
-  /* height: 10vh; */
-  margin-bottom: 10vh;
   justify-content: center;
   align-items: center;
 }
@@ -57,8 +55,9 @@ footer {
   height: 5vh;
 }
 
-.content-Of-A {
+.content-Of-Page {
   display: flex;
+  padding-top: 10vh;
   height: 75vh;
   font-size: 20vh;
   justify-content: center;

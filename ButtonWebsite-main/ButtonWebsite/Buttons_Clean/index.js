@@ -1,4 +1,6 @@
 let buttons = document.querySelectorAll(".color-change-button");
+let topBar = document.querySelector(".top-bar");
+let contentOfLetterPage = document.querySelectorAll(".content-Of-Page");
 let color;
 let buttonColors = [
   [255, 179, 186],
@@ -19,12 +21,13 @@ function setButtonColor(i) {
   })`;
   buttons[i].style.backgroundColor = color;
   buttons[i + 1].style.backgroundColor = color;
+  localStorage.setItem("Colors", JSON.stringify(buttonColors));
 }
 
+//Change button color to a random value
 for (let i = 0; i < buttons.length; i++) {
   if (buttons[i].innerText.length >= 10) {
-    buttons[i].onclick = (event) => {
-      //When a button is pressed write new color into array, change the color
+    buttons[i].onclick = () => {
       randomColor(i);
       setButtonColor(i);
     };
@@ -32,5 +35,52 @@ for (let i = 0; i < buttons.length; i++) {
   }
 }
 
-//Create Page of A, B, C and D
-//Link to pages (onclick and case)
+//Onclick link to other pages
+for (let i = 0; i < buttons.length; i++) {
+  if (buttons[i].innerText.length == 1) {
+    buttons[i].onclick = (event) => {
+      switch (event.target.innerText) {
+        case "a":
+          window.location = "./MeaningOfA.html";
+          break;
+        case "b":
+          window.location = "./MeaningOfB.html";
+          break;
+        case "c":
+          window.location = "./MeaningOfC.html";
+          break;
+        case "d":
+          window.location = "./MeaningOfD.html";
+          break;
+        default:
+          console.log("I have no idea what button you pressed, congrats");
+      }
+    };
+  }
+}
+
+topBar.onclick = () => {
+  window.location = "./";
+};
+
+function changeBackgroundColor(index) {
+  const storedColors = JSON.parse(localStorage.getItem("Colors"));
+  for (let i = 0; i < contentOfLetterPage.length; i++) {
+    contentOfLetterPage[
+      i
+    ].style.backgroundColor = `rgb(${storedColors[index]})`;
+  }
+}
+
+if (document.URL.includes("MeaningOfA")) {
+  changeBackgroundColor(0);
+}
+if (document.URL.includes("MeaningOfB")) {
+  changeBackgroundColor(1);
+}
+if (document.URL.includes("MeaningOfC")) {
+  changeBackgroundColor(2);
+}
+if (document.URL.includes("MeaningOfD")) {
+  changeBackgroundColor(3);
+}
