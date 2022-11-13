@@ -1,7 +1,8 @@
 let buttons = document.querySelectorAll(".color-change-button");
 let topBar = document.querySelector(".top-bar");
 let contentOfLetterPage = document.querySelectorAll(".content-Of-Page");
-let color;
+let discoButton = document.querySelector(".disco-Button");
+let discoToggle = false;
 let buttonColors = [
   [255, 179, 186],
   [186, 225, 255],
@@ -10,13 +11,17 @@ let buttonColors = [
 ];
 
 function randomColor(j) {
-  for (let i = 0; i < 3; i++) {
-    buttonColors[j / 2][i] = Math.floor(Math.random() * 256);
+  if (j < 4) {
+    for (let i = 0; i < 3; i++) {
+      buttonColors[j / 2][i] = Math.floor(Math.random() * 256);
+    }
+  } else {
   }
+  return Math.floor(Math.random() * 256);
 }
 
 function setButtonColor(i) {
-  color = `rgb(${buttonColors[i / 2][0]},${buttonColors[i / 2][1]},${
+  let color = `rgb(${buttonColors[i / 2][0]},${buttonColors[i / 2][1]},${
     buttonColors[i / 2][2]
   })`;
   buttons[i].style.backgroundColor = color;
@@ -83,4 +88,22 @@ if (document.URL.includes("MeaningOfC")) {
 }
 if (document.URL.includes("MeaningOfD")) {
   changeBackgroundColor(3);
+  discoButton.onclick = () => {
+    if (!discoToggle) {
+      discoModeActive();
+      discoLoop = setInterval(discoModeActive, 30);
+      discoToggle = true;
+    } else if (discoToggle) {
+      clearInterval(discoLoop);
+      discoToggle = false;
+    }
+  };
+}
+
+function discoModeActive() {
+  for (let i = 0; i < contentOfLetterPage.length; i++) {
+    contentOfLetterPage[
+      i
+    ].style.backgroundColor = `rgb(${randomColor()},${randomColor()},${randomColor()})`;
+  }
 }

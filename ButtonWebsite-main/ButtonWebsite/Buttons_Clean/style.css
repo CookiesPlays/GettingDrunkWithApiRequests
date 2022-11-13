@@ -62,3 +62,25 @@ footer {
   font-size: 20vh;
   justify-content: center;
 }
+
+.disco-Button {
+  width: 100vw;
+  height: 10vw;
+  background-image: repeating-linear-gradient(
+    -25deg,
+    #7bdff2 10px 30px,
+    #b2f7ef 30px 50px,
+    #eff7f6 50px 70px,
+    #f7d6e0 70px 90px,
+    #f2b5d4 90px 110px
+  );
+  color: black;
+  transition: 0.5s;
+  background-size: 300% 300%;
+  font-size: 8vh;
+  border-radius: 6px;
+}
+
+.disco-Button:hover {
+  background-position: 15% center;
+}
