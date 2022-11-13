@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: inline-flex;
+  height: 9vh;
+}
+
+.item-container {
+  height: 90vh;
+  width: 100vw;
+  display: inline-flex;
+}
+
+.items-to-be-sorted {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}

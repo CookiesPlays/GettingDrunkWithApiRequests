@@ -1,0 +1,149 @@
+/* UniversalOperator, gibt style für alle Sachen vor */
+* {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.top-bar {
+  /*done*/
+  display: flex;
+  height: 50px;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-bar h1 {
+  /*done*/
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  /* justify-content: center;  */
+  padding-left: 30%;
+}
+
+.Disco-container {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  justify-content: flex-end;
+}
+.Disco {
+  box-shadow: 2px 5px grey;
+  align-content: center;
+  margin-right: 10%;
+  height: auto;
+  /* border: 3px  solid black; */
+  padding: 30px;
+  font-size: 50px;
+  border-radius: 8px;
+  background: linear-gradient(red, orange, yellow, green, cyan, blue, violet);
+}
+
+.Disco:active {
+  position: relative;
+  top: 5px;
+  left: 4px;
+  box-shadow: 0px 0px grey;
+}
+
+.main-text {
+  /*done*/
+  font-size: 60px;
+  text-align: center;
+  margin-top: 5;
+}
+
+.grid-container {
+  /*done*/
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 30% 20%;
+  margin-bottom: 30px;
+}
+
+.buttona {
+  background-color: #ffb3ba;
+}
+.buttonb {
+  background-color: #bae1ff;
+}
+.buttonc {
+  background-color: #ffffba;
+}
+.buttond {
+  background-color: #baffc9;
+}
+.colora {
+  background-color: #ffb3ba;
+}
+.colorb {
+  background-color: #bae1ff;
+}
+.colorc {
+  background-color: #ffffba;
+}
+.colord {
+  background-color: #baffc9;
+}
+
+div {
+  text-align: center;
+}
+
+.grid-container button {
+  max-height: 100%;
+  font-size: 50px;
+  padding-inline: 30px;
+  border-radius: 8px;
+  margin: 5px;
+  border-color: black;
+  border-width: 3px;
+  min-width: 90px;
+  /* max-width: 90px; */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #bbeaff;
+  width: 100%;
+  padding: 5px;
+  height: 15px;
+}
+
+.rgba {
+  background-color: #ffb3ba;
+}
+
+.rgba1 {
+  background-color: #ffb3ba;
+}
+.rgbb {
+  background-color: #bae1ff;
+}
+
+.rgbb1 {
+  background-color: #bae1ff;
+}
+.rgbc {
+  background-color: #ffffba;
+}
+
+.rgbc1 {
+  background-color: #ffffba;
+}
+.rgbd {
+  background-color: #baffc9;
+}
+
+.rgbd1 {
+  background-color: #baffc9;
+}
+
+.text-color {
+  color: purple;
+  text-align: center;
+}
